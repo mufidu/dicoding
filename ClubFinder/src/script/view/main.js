@@ -1,36 +1,29 @@
-var main = function () {
-    var searchElement = document.querySelector("#searchElement");
-    var buttonSearchElement = document.querySelector("#searchButtonElement");
-    var clubListElement = document.querySelector("#clubList");
+import DataSource from "../data/data-source.js";
+import "../components/search-bar.js";
+import "../components/club-list.js";
 
-    var onButtonSearchClicked = function () {
-        var dataSource = new DataSource(renderResult, fallbackResult);
-        dataSource.searchClub(searchElement.value);
+const main = () => {
+    const searchElement = document.querySelector("search-bar");
+    const clubListElement = document.querySelector("club-list");
+
+    const onButtonSearchClicked = async () => {
+        try {
+            const res = await DataSource.searchClub(searchElement.value);
+            renderResult(res);
+        } catch {
+            fallbackResult(message);
+        }
     };
 
-    var renderResult = function (results) {
-        clubListElement.innerHTML = "";
-        results.forEach(function (club) {
-            var name = club.name;
-            var fanArt = club.fanArt;
-            var description = club.description;
-
-            var clubElement = document.createElement("div");
-            clubElement.setAttribute("class", "club");
-
-            clubElement.innerHTML = '<img class="fan-art-club" src="' + fanArt + '" alt="Fan Art">\n' +
-                '<div class="club-info">\n' +
-                '<h2>' + name + '</h2>\n' +
-                '<p>' + description + '</p>' +
-                '</div>';
-            clubListElement.appendChild(clubElement);
-        })
+    const renderResult = (results) => {
+        clubListElement.clubs = results;
     };
 
-    var fallbackResult = function (message) {
-        clubListElement.innerHTML = "";
-        clubListElement.innerHTML += '<h2 class="placeholder">' + message + '</h2>'
+    const fallbackResult = (message) => {
+        clubListElement.renderError(message);
     };
 
-    buttonSearchElement.addEventListener("click", onButtonSearchClicked);
+    searchElement.clickEvent = onButtonSearchClicked;
 };
+
+export default main;
