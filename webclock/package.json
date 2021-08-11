@@ -1,0 +1,14 @@
+{
+  "name": "webclock",
+  "version": "1.0.0",
+  "description": "dicoding project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mufid",
+  "license": "ISC",
+  "dependencies": {
+    "jquery": "^3.6.0"
+  }
+}
