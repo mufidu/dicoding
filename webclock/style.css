@@ -1,0 +1,24 @@
+body {
+	height: 100%;
+	overflow: hidden;
+	margin: 0;
+}
+
+.clock {
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	overflow: hidden;
+	background-color: pink;
+	margin: 0;
+}
+
+.time {
+	font-size: 5rem;
+}
+
+.date {
+}
