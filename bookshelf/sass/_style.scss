@@ -1,0 +1,84 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway&display=swap");
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    font-family: Raleway;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.header {
+    @apply flex w-full justify-center items-center h-20 bg-gray-500 text-center text-3xl font-bold uppercase text-white;
+}
+
+main {
+    @apply flex flex-col items-center justify-start flex-wrap gap-6 md:flex-row md:justify-evenly md:content-start md:items-start min-h-screen;
+}
+
+section {
+    @apply p-6 mt-6 border-gray-300 border-2 rounded flex flex-col items-center w-5/6 md:w-2/5;
+}
+
+h2 {
+    @apply text-xl mb-4 font-bold underline;
+}
+
+h3 {
+    @apply text-lg mb-2 font-semibold;
+}
+
+form {
+    @apply w-full;
+}
+
+#caribuku {
+    @apply text-center;
+    input {
+        @apply w-3/4;
+    }
+    button {
+        @apply ml-3 w-1/6;
+    }
+}
+
+.inputan {
+    @apply border border-gray-300 p-2 w-full mb-3;
+}
+
+button {
+    @apply mt-3 w-max p-2 rounded bg-gray-300 text-black;
+
+    &.selesai,
+    &.belumselesai {
+        @apply bg-green-400 mr-2;
+    }
+
+    &.hapus {
+        @apply bg-red-400;
+    }
+
+    &:hover {
+        opacity: 0.8;
+    }
+}
+
+section > div {
+    @apply w-full;
+}
+
+section > div > article {
+    @apply w-full p-6 border border-gray-300 rounded-md my-2;
+}
+
+span {
+    @apply font-bold;
+}
+
+footer {
+    @apply flex w-full justify-center items-center h-10 bg-gray-500 text-center text-white mt-8;
+}

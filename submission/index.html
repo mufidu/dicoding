@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+        <link href="css/style.css" rel="stylesheet" />
+        <title>Bookshelf</title>
+    </head>
+    <body>
+        <header class="header">Bookshelf</header>
+        <main>
+            <section>
+                <h2>Masukkan buku baru</h2>
+                <form id="inputbuku" autocomplete="off">
+                    <input
+                        type="text"
+                        id="inputjudul"
+                        placeholder="Judul"
+                        class="inputan"
+                        required
+                    />
+                    <input
+                        type="text"
+                        placeholder="Penulis"
+                        id="inputpenulis"
+                        class="inputan"
+                        required
+                    />
+                    <input
+                        type="number"
+                        id="inputtahun"
+                        required
+                        placeholder="Tahun"
+                        class="inputan"
+                    />
+                    <input type="checkbox" name="dibaca" id="inputdibaca" />
+                    <label for="inputdibaca">Selesai dibaca</label>
+                    <br />
+                    <button id="submitbuku" type="submit">
+                        Masukkan ke rak  &darr;
+                    </button>
+                </form>
+            </section>
+
+            <section>
+                <h2>Cari buku</h2>
+                <form id="caribuku">
+                    <input
+                        type="text"
+                        id="carijudul"
+                        placeholder="Judul buku"
+                        class="inputan"
+                    />
+                    <button type="submit" id="submitcari">Cari</button>
+                </form>
+            </section>
+
+            <section>
+                <h2>Belum dibaca</h2>
+                <div id="listbelumselesai">
+                </div>                    
+                </div>
+            </section>
+            
+            <section>
+                <h2>Sudah dibaca</h2>
+                <div id="listsudahselesai">
+                </div>                    
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            &copy; 2021 Muhammad Mufid
+        </footer>
+        
+        <script src="script/script.js"></script>
+    </body>
+</html>
